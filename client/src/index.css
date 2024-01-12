@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+  @apply bg-red-600 text-gray-50;
+}
+
+html {
+  min-width: 360px;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+body {
+  @apply antialiased text-gray-900 bg-gray-100;
+}
