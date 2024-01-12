@@ -1,25 +1,49 @@
-# Client
+# Client Ticketing System
 
-## Documentation
+## Overview
 
-This code is a part of a ticketing system built with React. It fetches tickets and users from an API, displays them, and allows for ticket creation, assignment, and completion. Here's a breakdown of the main parts:
+This project is a ticketing system built with React. It interacts with an API to fetch, display, create, assign, and complete tickets.
 
-1. App Component (app.tsx): This is the main component of the application. It fetches tickets and users from the API and maintains them in its state. It also handles the creation, assignment, and completion of tickets. It uses React Router to switch between the list of tickets and individual ticket details.
+## Components
 
-2. Tickets Component (tickets/tickets.tsx): This component receives tickets and users as props and displays them in a table. It also receives completeTicket and assignTicket functions as props, which are used to complete and assign tickets respectively.
+### App Component (`app.tsx`)
 
-3. TicketDetails Component (app.tsx): This is a child component of the App component. It displays the details of a single ticket and allows for the assignment and completion of the ticket.
+The App component is the heart of the application. It fetches tickets and users from the API and manages them in its state. It also handles ticket creation, assignment, and completion. The component uses React Router to navigate between the ticket list and individual ticket details.
 
-4. Data Fetching (app.tsx): The App component fetches tickets and users from the API using the fetch function inside a useEffect hook. The fetched data is stored in the component's state using useState.
+### Tickets Component (`tickets/tickets.tsx`)
 
-5. Ticket Creation (app.tsx): The App component includes a form for creating new tickets. When the form is submitted, a POST request is sent to the API with the new ticket's description.
+The Tickets component displays tickets and users in a table format. It receives tickets, users, completeTicket, and assignTicket as props. The latter two are functions used to complete and assign tickets.
 
-6. Ticket Assignment (app.tsx): The TicketDetails component includes a dropdown for selecting a user to assign to the ticket. When a user is selected and the "Assign Ticket" button is clicked, a PUT request is sent to the API to assign the user to the ticket.
+### TicketDetails Component (`app.tsx`)
 
-7. Ticket Completion (app.tsx): The TicketDetails component includes a "Mark as Completed" button. When this button is clicked, a PUT request is sent to the API to mark the ticket as completed.
+The TicketDetails component is a child of the App component. It displays the details of a single ticket and facilitates the assignment and completion of the ticket.
 
-8. Feedback Messages (app.tsx): The App component maintains a feedbackMessage in its state. This message is displayed to the user to provide feedback about actions such as ticket creation, assignment, and completion.
+## Features
 
-9. Ticket Filtering (app.tsx): The App component includes inputs for filtering tickets by ID and completion status. The filtered tickets are passed to the Tickets component for display.
+### Data Fetching
 
-10. Routing (app.tsx): The App component uses React Router to switch between the list of tickets ("/") and individual ticket details ("/:id"). The Tickets and TicketDetails components are rendered based on the current route.
+The App component fetches tickets and users from the API using the fetch function inside a useEffect hook. The fetched data is stored in the component's state using useState.
+
+### Ticket Creation
+
+The App component includes a form for creating new tickets. On form submission, a POST request is sent to the API with the new ticket's description.
+
+### Ticket Assignment
+
+The TicketDetails component includes a dropdown for selecting a user to assign to the ticket. When a user is selected and the "Assign Ticket" button is clicked, a PUT request is sent to the API to assign the user to the ticket.
+
+### Ticket Completion
+
+The TicketDetails component includes a "Mark as Completed" button. When this button is clicked, a PUT request is sent to the API to mark the ticket as completed.
+
+### Feedback Messages
+
+The App component maintains a feedbackMessage in its state. This message is displayed to the user to provide feedback about actions such as ticket creation, assignment, and completion.
+
+### Ticket Filtering
+
+The App component includes inputs for filtering tickets by ID and completion status. The filtered tickets are passed to the Tickets component for display.
+
+### Routing
+
+The App component uses React Router to switch between the list of tickets (`"/"`) and individual ticket details (`"/:id"`). The Tickets and TicketDetails components are rendered based on the current route.
