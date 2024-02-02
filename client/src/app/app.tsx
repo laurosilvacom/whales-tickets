@@ -5,7 +5,7 @@ import { Ticket, User } from '@acme/shared-models';
 import { Link } from 'react-router-dom';
 import { Tickets } from './tickets/tickets';
 import { useLocation } from 'react-router-dom';
-import { addTicket } from './useTicketActions'; // Import the addTicket function
+import { addTicket } from './useTicketActions';
 import { assignTicket } from './useTicketActions';
 
 const App = () => {
